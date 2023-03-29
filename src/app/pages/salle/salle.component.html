@@ -1,0 +1,62 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Rooms Page</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Pages</li>
+             <li class="breadcrumb-item active">Rooms</li>
+          </ol>
+       </nav>
+    </div>
+    <section class="section">
+       <div class="row">
+          <div class="col-lg-12">
+             <div class="card">
+                <div class="card-body">
+                   <h5 class="card-title">Rooms list</h5>
+                   <button class="btn btn-outline-primary  ; " style="float:right;" (click)=" openEditDialog()" [disabled]="buttonDisabled"> <i
+                         class="bi bi-plus-lg"></i> Create a new room</button>
+                   <br><br>
+ 
+                   <table class="table datatable">
+                      <thead>
+                         <tr>
+ 
+                            <th scope="col">ID</th>
+                            <th scope="col">nameSalle</th>
+                            <th scope="col">bureauName</th>
+                            
+                           <th scope="col"></th>
+                           <th scope="col"></th>
+                         </tr>
+                      </thead>
+                      <tbody *ngFor="let salle of salles">
+                         
+                         <tr>
+ 
+                            <td>{{salle.salle_id}}</td>
+                            <td>{{salle.nameSalle}}</td>
+                            <td>{{salle.bureauName}}</td>
+                           
+                           
+                            
+                            <td class = "btn-toolbar">
+                               <button type="button" class=" btn-primary  "> Edit</button>
+                            
+                          
+                            <button type="button" class=" btn-danger" (click)="deleteSalle(salle.salle_id)" >Delete</button>
+                            
+                           </td>
+                         </tr>
+                         
+ 
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+ </main>
+

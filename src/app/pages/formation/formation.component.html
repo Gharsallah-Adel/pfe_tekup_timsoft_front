@@ -1,0 +1,68 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Trainings Page</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Pages</li>
+             <li class="breadcrumb-item active">Training</li>
+          </ol>
+       </nav>
+    </div>
+    <section class="section">
+       <div class="row">
+          <div class="col-lg-12">
+             <div class="card">
+                <div class="card-body">
+                   <h5 class="card-title">Trainings list</h5>
+                   <button class="btn btn-outline-primary  ; " style="float:right;" (click)=" openEditDialog()" [disabled]="buttonDisabled"> <i
+                         class="bi bi-plus-lg"></i> Create a new Training</button>
+                   <br><br>
+ 
+                   <table class="table datatable">
+                      <thead>
+                         <tr>
+ 
+                            <th scope="col">ID</th>
+                            <th scope="col">description</th>
+                            <th scope="col">start date</th>
+                            <th scope="col">end date </th>
+                            <th scope="col">number of participants</th>
+                            <th scope="col">Presence</th>
+                          
+                           <th scope="col"></th>
+                           <th scope="col"></th>
+                         </tr>
+                      </thead>
+                      <tbody *ngFor="let formation of formations">
+                         
+                         <tr>
+ 
+                            <td>{{formation.formation_id}}</td>
+                            <td>{{formation.description}}</td>
+                            <td>{{formation.dateDebut}}</td>
+                            <td>{{formation.dateFin}}</td>
+                            <td>{{formation.nombreParticipant}}</td>
+                            <td>{{formation.enPresence}}</td>
+                           
+                           
+                            
+                            <td class = "btn-toolbar">
+                               <button type="button" class=" btn-primary  "> Edit</button>
+                            
+                          
+                            <button type="button" class=" btn-danger" (click)="deleteFormation(formation.formation_id)" >Delete</button>
+                            
+                           </td>
+                         </tr>
+                         
+ 
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+ </main>
+

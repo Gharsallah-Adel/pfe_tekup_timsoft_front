@@ -1,0 +1,81 @@
+<div class="m-c">
+
+    <div class="button-container">
+    <button type="button" class="btn-close " style="top: 100%; width:50px " (click)="onCancelClick()" ></button>
+    </div>
+    <h2>Add Training</h2>
+    
+    <HR>
+      
+    <form  >
+        <div class="col-12">
+            <label for="yourName" class="form-label"> description</label>
+             <input type="text" name="name" class="form-control" id="yourName" [(ngModel)]="formation.description" required >
+            <div class="invalid-feedback">Please, enter the description!</div>
+         </div>
+         <div class="col-12">
+            <label for="yourEmail" class="form-label"> niveau</label> 
+            <input type="text" name="email" class="form-control" id="yourEmail" [(ngModel)]="formation.niveau" required>
+            <div class="invalid-feedback">Please enter a valid Email niveau!</div>
+         </div>
+         <div class="col-12">
+             <label for="yourName" class="form-label"> dateDebut</label>
+               <input type="date" name="username" class="form-control" id="yourUsername" [(ngModel)]="formation.dateDebut" required>
+               <div class="invalid-feedback">Please choose a dateDebut.</div>
+            </div>
+         
+         <div class="col-12">
+            <label for="yourPassword" class="form-label">dateFin</label> 
+            <input type="date" name="password" class="form-control" id="yourPassword" [(ngModel)]="formation.dateFin" required>
+            <div class="invalid-feedback">Please enter your dateFin!</div>
+         </div>
+       
+       <div class="col-12">
+          <label for="yourPassword" class="form-label">nombreParticipant</label> 
+          <input type="text" name="password" class="form-control" id="yourPassword" [(ngModel)]="formation.nombreParticipant" required>
+          <div class="invalid-feedback">Please enter your nombreParticipant!</div>
+       </div>
+       <div class="col-12">
+         <label for="yourPassword" class="form-label">duree</label> 
+         <input type="text" name="password" class="form-control" id="yourPassword" [(ngModel)]="formation.duree" required>
+         <div class="invalid-feedback">Please enter your duree!</div>
+      </div>
+      <div class="col-12">
+       <label for="yourPassword" class="form-label">statut</label> 
+       <input type="text" name="password" class="form-control" id="yourPassword" [(ngModel)]="formation.statut" required>
+       <div class="invalid-feedback">Please enter your statut!</div>
+    </div>
+    <div class="col-12">
+      <label  class="form-label">statut</label> 
+      
+   <select class="form-control">
+    <option > in progress</option>
+    <option > scheduled </option>
+    <option > over </option>
+  </select>
+ </div>
+
+    <div class="col-12">
+     <label  class="form-label">Type</label> 
+  <select class="form-control">
+   <option > Online</option>
+   <option > OnSite</option>
+ </select>
+</div>
+        
+         <div class="col-12">
+            <div class="form-check">
+               <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required> <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+               <div class="invalid-feedback">You must agree before submitting.</div>
+            </div>
+            
+         </div>
+        
+      
+      <div class="button-container"> 
+        <button   type="button" class="btn btn-primary" (click)="onSaveClick()" ><i class="bi bi-check-circle"></i>Create </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="onCancelClick()">Cancel</button>
+      </div>
+      
+    </form>
+    </div>

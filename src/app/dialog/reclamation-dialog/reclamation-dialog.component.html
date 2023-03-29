@@ -1,0 +1,34 @@
+<div class="m-c">
+
+    <div class="button-container">
+    <button type="button" class="btn-close " style="top: 100%; width:50px " (click)="onCancelClick()" ></button>
+    </div>
+    <h2>Add Claims</h2>
+    
+    <HR>
+      
+    <form  >
+      <div class="col-12">
+         <label for="description" class="form-label"> Description</label>
+          <textarea type="text" name="name" class="form-control" #departementName="ngModel" [(ngModel)]="reclamation.Description"> </textarea>
+         <div *ngIf="!departementName.valid">Please, enter the name!</div>
+      </div>
+    
+     
+    <br>
+      <div class="col-12">
+         <div class="form-check">
+            <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required> <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+            <div class="invalid-feedback">You must agree before submitting.</div>
+         </div>
+         
+      </div>
+      
+      <div class="button-container"> 
+        <button   type="button" class="btn btn-primary" (click)="onSaveClick()" ><i class="bi bi-check-circle"></i>Create </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="onCancelClick()">Cancel</button>
+      </div>
+      
+    </form>
+    </div>
+
